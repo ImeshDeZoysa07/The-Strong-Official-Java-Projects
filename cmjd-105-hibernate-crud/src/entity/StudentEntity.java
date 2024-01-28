@@ -40,9 +40,6 @@ public class StudentEntity {
      @Column(name = "nic", nullable = false, length = 12)
      private String nic;
  
-     // Composite Attribute
-    private StudentName name;
- 
      //Multivalued Attribute
      @ElementCollection
      @CollectionTable(
@@ -50,6 +47,8 @@ public class StudentEntity {
          joinColumns = @JoinColumn(name = "student_id")
      )
      private List<String> mobiles;
+
+     private StudentName studentName;
  
      @CreationTimestamp
      @Column(name = "create_date", nullable = false)
